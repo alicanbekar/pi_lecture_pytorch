@@ -151,5 +151,6 @@ class NeuralNetworkInterface:
         self.dropdown_name_nn = self.training_interface.dropdown_name_nn
         clear_output(wait=True)
 
-    def get_weight_path(self, exp_name):
-        return f'nn_weights/{exp_name}.pth'
+    @staticmethod
+    def get_weight_path(exp_name):
+        return f'nn_weights/{exp_name}'
