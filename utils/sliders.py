@@ -129,7 +129,7 @@ class NeuralNetworkInterface:
 
         # Set up button event handlers
         self.load_button.on_click(self.load_results)
-        self.train_button.on_click(self.train_mode)
+        self.train_button.on_click(self.train)
 
     def display(self):
         # Display the buttons
