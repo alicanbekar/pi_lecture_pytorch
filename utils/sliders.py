@@ -10,14 +10,12 @@ class LoadingInterface:
             value='Plain-UNet',
         )
 
-        # Create a button to print the values
         self.select_button = widgets.Button(
             description='Select Network',
         )
         self.select_button.on_click(self.select_values)
 
       def display(self):
-        # Organize the widgets using HBox and VBox with HTML descriptions
         display(widgets.VBox([
             widgets.HBox([
                 widgets.HTML('<p style="width:250px">NN Constraints:</p>'),
@@ -62,7 +60,7 @@ class TrainingInterface:
             readout_format='.4f'
         )
 
-        self.num_timesteps_slider = widgets.IntSlider(
+        self.num_ics_slider = widgets.IntSlider(
             value=50,
             min=10,
             max=100,
@@ -85,7 +83,6 @@ class TrainingInterface:
         self.print_button.on_click(self.print_values)
 
     def display(self):
-        # Organize the widgets using HBox and VBox with HTML descriptions
         display(widgets.VBox([
             widgets.HBox([
                 widgets.HTML('<p style="width:250px">Batch Size:</p>'),
@@ -115,7 +112,7 @@ class TrainingInterface:
         print(f'Batch Size: {self.batch_size_slider.value}')
         print(f'Number of Epochs: {self.num_epochs_slider.value}')
         print(f'Learning Rate: {self.learning_rate_slider.value}')
-        print(f'Number of ICs: {self.num_timesteps_slider.value}')
+        print(f'Number of ICs: {self.num_ics_slider.value}')
         print(f'NN Constraints: {self.dropdown_name_nn.value}')
 
 class NeuralNetworkInterface:
