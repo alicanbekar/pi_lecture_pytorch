@@ -98,7 +98,7 @@ class TrainingInterface:
             ]),
             widgets.HBox([
                 widgets.HTML('<p style="width:250px">Number of ICs:</p>'),
-                self.num_timesteps_slider
+                self.num_ics_slider
             ]),
             widgets.HBox([
                 widgets.HTML('<p style="width:250px">NN Constraints:</p>'),
