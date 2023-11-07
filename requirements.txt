@@ -1,0 +1,17 @@
+# the same as environment.yaml
+
+h5py
+numpy
+matplotlib
+ipython
+jupyter
+jupyterlab
+scipy
+tensorboard
+torchvision>=0.12
+scikit-learn
+tqdm
+ipywidgets
+
+--index-url https://download.pytorch.org/whl/cu118
+torch>=2.0

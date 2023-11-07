@@ -1,0 +1,23 @@
+name: PytorchTutorial
+
+channels:
+  - nvidia
+  - pytorch
+  - conda-forge
+
+dependencies:
+  - python>3.11
+  - pip
+  - pytorch-cuda=11.8
+  - pytorch>=2
+  - tensorboard
+  - torchvision>=0.12
+  - matplotlib
+  - ipython
+  - jupyter
+  - jupyterlab
+  - ipywidgets
+  - scikit-learn
+  - numpy
+  - tqdm
+  - h5py
