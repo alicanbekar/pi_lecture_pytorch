@@ -4,7 +4,7 @@ from ipywidgets import Layout
 
 
 class LoadingInterface:
-      def __init__(self):
+    def __init__(self):
         self.dropdown_name_nn = widgets.Dropdown(
             options=['Plain-UNet', 'UNet-BCs', 'Flux-UNet', 'Hybrid-UNet'],
             value='Plain-UNet',
@@ -15,7 +15,7 @@ class LoadingInterface:
         )
         self.select_button.on_click(self.select_values)
 
-      def display(self):
+    def display(self):
         display(widgets.VBox([
             widgets.HBox([
                 widgets.HTML('<p style="width:250px">NN Constraints:</p>'),
@@ -23,9 +23,10 @@ class LoadingInterface:
             ]),
             self.select_button
         ]))
-      
-      def select_values(self, button):
-          print(f'NN Constraints: {self.dropdown_name_nn.value}')
+
+    def select_values(self, button):
+        print(f'NN Constraints: {self.dropdown_name_nn.value}')
+
 
 class TrainingInterface:
     def __init__(self):
@@ -115,8 +116,14 @@ class TrainingInterface:
         print(f'Number of ICs: {self.num_ics_slider.value}')
         print(f'NN Constraints: {self.dropdown_name_nn.value}')
 
+
 class NeuralNetworkInterface:
     def __init__(self):
+        self.loading_interface = None
+        self.training_interface = None
+        self.train = False
+        self.dropdown_name_nn = None
+
         self.load_button = widgets.Button(description="Load Results")
         self.train_button = widgets.Button(description="Train")
 
@@ -135,7 +142,6 @@ class NeuralNetworkInterface:
         self.train = False
         self.dropdown_name_nn = self.loading_interface.dropdown_name_nn
         clear_output(wait=True)
-        
 
     def train(self, button):
         # Display the TrainingInterface for parameter selection
@@ -144,3 +150,6 @@ class NeuralNetworkInterface:
         self.train = True
         self.dropdown_name_nn = self.training_interface.dropdown_name_nn
         clear_output(wait=True)
+
+    def get_weight_path(self, exp_name):
+        return f'nn_weights/{exp_name}.pth'
