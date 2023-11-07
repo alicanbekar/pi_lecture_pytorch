@@ -121,7 +121,7 @@ class NeuralNetworkInterface:
     def __init__(self):
         self.loading_interface = None
         self.training_interface = None
-        self.train = False
+        self.train_mode = False
         self.dropdown_name_nn = None
 
         self.load_button = widgets.Button(description="Load Results")
@@ -129,7 +129,7 @@ class NeuralNetworkInterface:
 
         # Set up button event handlers
         self.load_button.on_click(self.load_results)
-        self.train_button.on_click(self.train)
+        self.train_button.on_click(self.train_mode)
 
     def display(self):
         # Display the buttons
@@ -139,7 +139,7 @@ class NeuralNetworkInterface:
         # Example action for loading weights
         self.loading_interface = LoadingInterface()
         self.loading_interface.display()
-        self.train = False
+        self.train_mode = False
         self.dropdown_name_nn = self.loading_interface.dropdown_name_nn
         clear_output(wait=True)
 
@@ -147,7 +147,7 @@ class NeuralNetworkInterface:
         # Display the TrainingInterface for parameter selection
         self.training_interface = TrainingInterface()
         self.training_interface.display()
-        self.train = True
+        self.train_mode = True
         self.dropdown_name_nn = self.training_interface.dropdown_name_nn
         clear_output(wait=True)
 
