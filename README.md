@@ -19,8 +19,8 @@ We will use different methods to train a U-net to integrate the shallow water eq
 
 # How to use this repository?
 All necessary codes are in the notebook [swe_instructor_code_retreat.ipynb](swe_instructor_code_retreat.ipynb). 
-The notebook will guide you through the steps in concepts. Eventually you will hit a cell that on execution displays
-two buttons "train" and "load results". If you select load results, you will not have to wait for the training to finish,
+The notebook will guide you through the steps in concepts. **Eventually you will hit a cell that on execution displays
+two buttons "train" and "load results".** If you select load results, you will not have to wait for the training to finish,
 but already pre-trained models will be loaded and you can continue with the next steps. If you wish to play around with
 hyper parameters and train your own models, you can select the train button, but keep in mind that training (especially
 on colab) will take some time.
